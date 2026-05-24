@@ -120,6 +120,64 @@
   .btn-hero:hover { transform:scale(1.04) translateY(-3px); }
   .hero-note { font-size:13px; color:rgba(255,255,255,.6); margin-top:12px; }
 
+  /* ── PREÇO HERO ── */
+  .hero-price-block {
+    background: rgba(0,0,0,.35);
+    border: 1.5px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(8px);
+    border-radius: 18px;
+    padding: 20px 28px 16px;
+    margin: 0 auto 28px;
+    max-width: 360px;
+    text-align: center;
+  }
+  .hero-price-old {
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .hero-price-label-old {
+    font-size: 13px; color: rgba(255,255,255,.55); font-weight: 600;
+    white-space: nowrap;
+  }
+  .hero-price-strike {
+    font-size: clamp(18px,4.5vw,22px);
+    font-weight: 800;
+    color: rgba(255,255,255,.45);
+    text-decoration: line-through;
+    text-decoration-color: #e74c3c;
+    text-decoration-thickness: 3px;
+    letter-spacing: .5px;
+  }
+  .hero-price-promo {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; flex-wrap: wrap;
+  }
+  .hero-price-label-promo {
+    font-size: 14px; color: var(--gold-light); font-weight: 800;
+    white-space: nowrap;
+  }
+  .hero-price-new {
+    font-size: clamp(30px,7.5vw,44px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    text-shadow: 0 0 24px rgba(243,156,18,.6), 0 2px 8px rgba(0,0,0,.4);
+    letter-spacing: .5px;
+    background: linear-gradient(90deg, #f1c40f, #f39c12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-price-saving {
+    margin-top: 10px;
+    display: inline-block;
+    background: linear-gradient(90deg, var(--red), #e74c3c);
+    color: #fff; font-size: 13px; font-weight: 800;
+    padding: 5px 16px; border-radius: 50px;
+    letter-spacing: .3px;
+    box-shadow: 0 4px 12px rgba(192,57,43,.45);
+  }
+
   /* ── URGÊNCIA ── */
   .urgency {
     background: linear-gradient(90deg, var(--red-dark), var(--red));
@@ -284,77 +342,212 @@
   .garantia-box h3 { font-family:'Playfair Display',serif; font-size:26px; margin-bottom:12px; }
   .garantia-box p { font-size:15px; color:var(--gray); line-height:1.6; }
 
-  /* ── FORMULÁRIO ── */
+  /* ── FORMULÁRIO — novo layout split ── */
   .form-section {
-    background: linear-gradient(135deg,#1a1a2e,#16213e);
-    padding:60px 20px;
+    background:#f4f6f8;
+    padding:56px 20px;
   }
-  .form-box {
-    background:#fff; border-radius:24px;
-    padding:40px 32px; max-width:520px;
-    margin:0 auto; box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  .form-card {
+    background:#fff;
+    border-radius:20px;
+    max-width:860px;
+    margin:0 auto;
+    box-shadow:0 12px 48px rgba(0,0,0,.13);
+    overflow:hidden;
+    display:flex;
+    flex-direction:row;
   }
-  .form-title {
-    font-family:'Playfair Display',serif;
-    font-size:clamp(22px,5vw,30px);
-    text-align:center; margin-bottom:8px;
-    color:var(--dark);
+  /* Coluna esquerda — imagem */
+  .form-img-col {
+    flex:0 0 42%;
+    background:#f9f9f9;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:32px 24px 24px;
+    border-right:1px solid #ececec;
   }
-  .form-title span { color:var(--red); }
-  .form-sub {
-    text-align:center; color:var(--gray);
-    font-size:14px; margin-bottom:28px; line-height:1.5;
+  .form-img-col img {
+    width:100%; max-width:260px;
+    height:auto; display:block;
+    border-radius:10px;
+    object-fit:contain;
   }
-  .form-group { margin-bottom:18px; }
-  .form-group label {
-    display:block; font-weight:700; font-size:14px;
-    margin-bottom:6px; color:var(--dark);
-  }
-  .form-group input {
-    width:100%; padding:14px 18px;
-    border:2px solid #e8e8e8; border-radius:12px;
-    font-family:'Nunito',sans-serif; font-size:16px;
-    transition:.2s; outline:none;
-    color:var(--dark);
-  }
-  .form-group input:focus { border-color:var(--red); box-shadow:0 0 0 3px rgba(192,57,43,.15); }
-  .btn-order {
-    width:100%; padding:18px;
-    background: linear-gradient(135deg,var(--green),var(--green-dark));
-    color:#fff; border:none; border-radius:14px;
-    font-family:'Nunito',sans-serif; font-size:18px; font-weight:800;
-    cursor:pointer; transition:.2s; text-transform:uppercase; letter-spacing:.5px;
-    box-shadow: 0 8px 24px rgba(39,174,96,.4);
-    margin-top:8px;
-  }
-  .btn-order:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(39,174,96,.5); }
-  .btn-order:active { transform:translateY(0); }
-  .btn-order:disabled { opacity:.6; cursor:not-allowed; transform:none; }
-  .form-privacy {
-    text-align:center; font-size:12px; color:var(--gray);
-    margin-top:14px; line-height:1.5;
-  }
-  .form-trust {
-    display:flex; justify-content:center; gap:18px;
-    margin-top:20px; flex-wrap:wrap;
-  }
-  .trust-item {
+  .form-stars {
     display:flex; align-items:center; gap:6px;
-    font-size:12px; font-weight:700; color:var(--gray);
+    margin-top:20px; font-size:13px; color:#555;
+    font-weight:700;
   }
-  /* Order status */
-  #order-status { display:none; margin-top:20px; border-radius:12px; padding:18px 20px; text-align:center; }
-  #order-status.success {
-    background:#eafaf1; border:2px solid var(--green);
-    color:var(--green-dark); display:block;
+  .form-stars .stars { color:#f39c12; font-size:16px; letter-spacing:1px; }
+  /* Coluna direita — form */
+  .form-right-col {
+    flex:1;
+    padding:36px 32px 32px;
+    display:flex;
+    flex-direction:column;
   }
-  #order-status.error {
-    background:#fdedec; border:2px solid var(--red);
-    color:var(--red-dark); display:block;
+  .form-right-col h2 {
+    font-size:clamp(17px,2.5vw,22px);
+    font-weight:800;
+    color:var(--dark);
+    margin-bottom:6px;
+    line-height:1.3;
   }
-  #order-status .status-icon { font-size:36px; margin-bottom:8px; }
-  #order-status h4 { font-size:18px; font-weight:800; margin-bottom:6px; }
-  #order-status p { font-size:14px; line-height:1.5; }
+  .form-right-col .form-desc {
+    font-size:13px; color:#666;
+    margin-bottom:18px; line-height:1.5;
+  }
+  /* Badge + timer row */
+  .form-badge-row {
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:10px; flex-wrap:wrap;
+  }
+  .badge-pagamento {
+    background:var(--green); color:#fff;
+    font-size:12px; font-weight:800;
+    padding:5px 13px; border-radius:50px;
+    white-space:nowrap;
+  }
+  .badge-timer {
+    color:var(--red); font-size:18px; font-weight:900;
+    font-variant-numeric:tabular-nums;
+  }
+  /* Preço */
+  .form-price {
+    font-size:clamp(30px,5vw,42px);
+    font-weight:900; color:var(--dark);
+    margin-bottom:6px; line-height:1;
+  }
+  .form-price-note {
+    font-size:13px; color:#777;
+    margin-bottom:20px;
+    display:flex; align-items:center; gap:5px;
+  }
+  /* Inputs */
+  .form-input {
+    width:100%; padding:14px 16px;
+    border:1.5px solid #d8d8d8; border-radius:10px;
+    font-family:'Nunito',sans-serif; font-size:15px;
+    outline:none; transition:.2s; color:var(--dark);
+    margin-bottom:12px; background:#fff;
+  }
+  .form-input:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(39,174,96,.15); }
+  .form-input::placeholder { color:#bbb; }
+  /* Botão confirmar */
+  .btn-confirmar {
+    width:100%; padding:17px;
+    background: var(--green-dark);
+    color:#fff; border:none; border-radius:12px;
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(15px,2.2vw,17px); font-weight:800;
+    cursor:pointer; transition:.2s;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    box-shadow:0 6px 20px rgba(30,132,73,.35);
+    margin-bottom:10px;
+  }
+  .btn-confirmar:hover { background:#166a38; transform:translateY(-2px); }
+  .btn-confirmar:active { transform:translateY(0); }
+  .btn-confirmar:disabled { opacity:.6; cursor:not-allowed; transform:none; }
+  .btn-confirmar .lock-icon { font-size:16px; }
+  /* Nota segurança */
+  .form-secure-note {
+    font-size:12px; color:#999; text-align:center;
+    margin-bottom:20px;
+    display:flex; align-items:center; justify-content:center; gap:4px;
+  }
+  /* 4 ícones de trust */
+  .form-trust-row {
+    display:flex; justify-content:space-around;
+    border-top:1px solid #f0f0f0; padding-top:18px;
+    flex-wrap:wrap; gap:10px;
+  }
+  .trust-icon-item {
+    display:flex; flex-direction:column; align-items:center; gap:5px;
+    font-size:11px; font-weight:700; color:#666; text-align:center;
+    min-width:60px;
+  }
+  .trust-icon-item .ti-icon {
+    width:36px; height:36px; border-radius:50%;
+    border:1.5px solid #d5ede0;
+    background:#f0faf5;
+    display:flex; align-items:center; justify-content:center;
+    font-size:16px;
+  }
+  /* Error inline */
+  .form-error-msg {
+    display:none; background:#fdedec; border:1.5px solid var(--red);
+    border-radius:10px; padding:12px 16px;
+    font-size:13px; color:var(--red-dark); margin-top:8px;
+    line-height:1.5;
+  }
+  .form-error-msg.show { display:block; }
+
+  /* Responsivo mobile */
+  @media(max-width:640px){
+    .form-card { flex-direction:column; }
+    .form-img-col { border-right:none; border-bottom:1px solid #ececec; padding:24px 20px 20px; }
+    .form-right-col { padding:24px 20px 28px; }
+    .form-img-col img { max-width:200px; }
+  }
+
+  /* ── MODAL DE CONFIRMAÇÃO ── */
+  .confirm-overlay {
+    display:none;
+    position:fixed; inset:0; z-index:9999;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(3px);
+    align-items:center; justify-content:center;
+    padding:20px;
+  }
+  .confirm-overlay.show { display:flex; }
+  .confirm-modal {
+    background:#fff; border-radius:20px;
+    max-width:440px; width:100%;
+    padding:40px 32px 32px;
+    text-align:center;
+    box-shadow:0 24px 80px rgba(0,0,0,.25);
+    position:relative;
+    animation:modal-in .35s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes modal-in {
+    from{opacity:0;transform:scale(.85) translateY(20px)}
+    to{opacity:1;transform:scale(1) translateY(0)}
+  }
+  .confirm-close {
+    position:absolute; top:14px; right:18px;
+    background:none; border:none; font-size:22px;
+    color:#aaa; cursor:pointer; line-height:1;
+  }
+  .confirm-close:hover { color:#555; }
+  .confirm-check-wrap {
+    width:70px; height:70px; border-radius:50%;
+    background:#e8f8ee; margin:0 auto 20px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .confirm-check-wrap svg { width:36px; height:36px; }
+  .confirm-modal h3 {
+    font-size:22px; font-weight:800;
+    color:var(--dark); margin-bottom:10px;
+  }
+  .confirm-modal p {
+    font-size:14px; color:#555;
+    line-height:1.65; margin-bottom:20px;
+  }
+  .confirm-box {
+    background:#f0faf5; border:1px solid #b8e6cc;
+    border-radius:12px; padding:16px 18px;
+    display:flex; align-items:flex-start; gap:12px;
+    text-align:left;
+  }
+  .confirm-box-icon {
+    width:34px; height:34px; flex-shrink:0;
+    background:#d4f0e0; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:16px;
+  }
+  .confirm-box-text { font-size:13px; color:#2d6a4f; line-height:1.5; }
+  .confirm-box-text strong { font-weight:800; }
 
   /* ── FAQ ── */
   .faq { background:var(--cream); }
@@ -447,6 +640,19 @@
         loading="eager"
       >
       <div class="hero-img-badge">🏆 #1 Terlaris</div>
+    </div>
+
+    <!-- PREÇO HERO -->
+    <div class="hero-price-block">
+      <div class="hero-price-old">
+        <span class="hero-price-label-old">Harga Normal:</span>
+        <span class="hero-price-strike">780.000 IDR</span>
+      </div>
+      <div class="hero-price-promo">
+        <span class="hero-price-label-promo">🔥 Harga Promo:</span>
+        <span class="hero-price-new">390.000 IDR</span>
+      </div>
+      <div class="hero-price-saving">💰 Hemat 50% — Hari Ini Saja!</div>
     </div>
 
     <a href="#order" class="btn-hero">🛒 PESAN SEKARANG — COD</a>
@@ -682,36 +888,98 @@
 
 <!-- ═══════════════════════════ FORMULÁRIO ═══════════════════════════ -->
 <section class="form-section" id="order">
-  <div class="container">
-    <div class="form-box">
-      <h2 class="form-title">Pesan <span>Hemocool</span><br>Sekarang — COD</h2>
-      <p class="form-sub">Isi data Anda di bawah. Tim kami akan menghubungi Anda dalam <strong>1–2 jam</strong> untuk konfirmasi pengiriman. Bayar hanya saat paket tiba!</p>
+  <div class="container" style="max-width:880px;">
+    <div class="form-card">
 
-      <div class="form-group">
-        <label for="name">👤 Nama Lengkap</label>
-        <input type="text" id="name" name="name" placeholder="Contoh: Budi Santoso" autocomplete="name" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">📱 Nomor WhatsApp / HP</label>
-        <input type="tel" id="phone" name="phone" placeholder="Contoh: 08123456789" autocomplete="tel" required>
+      <!-- COLUNA ESQUERDA — imagem -->
+      <div class="form-img-col">
+        <img id="form-product-img" src="" alt="Hemocool — Obat Wasir Alami">
+        <div class="form-stars">
+          <span class="stars">★★★★</span>★
+          <span>4,9 · 2.847 avaliações</span>
+        </div>
       </div>
 
-      <button class="btn-order" id="btn-submit" onclick="submitOrder()">
-        🛒 PESAN SEKARANG — BAYAR DI TEMPAT
-      </button>
+      <!-- COLUNA DIREITA — form -->
+      <div class="form-right-col">
+        <h2>Bayar somente setelah menerima barang.</h2>
+        <p class="form-desc">Konfirmasi pesanan Anda di bawah. Tim kami akan menghubungi Anda untuk memvalidasi pengiriman.</p>
 
-      <div id="order-status"></div>
+        <!-- Badge + timer -->
+        <div class="form-badge-row">
+          <span class="badge-pagamento">Pembayaran di tempat</span>
+          <span class="badge-timer" id="form-timer">02:23</span>
+        </div>
 
-      <p class="form-privacy">🔒 Data Anda aman dan tidak akan disebarkan kepada pihak ketiga</p>
-      <div class="form-trust">
-        <div class="trust-item">✅ COD Tersedia</div>
-        <div class="trust-item">🚚 Gratis Ongkir</div>
-        <div class="trust-item">📦 Kemasan Discreet</div>
-        <div class="trust-item">🛡️ Garansi 30 Hari</div>
+        <!-- Preço -->
+        <div class="form-price">IDR 390.000</div>
+        <div class="form-price-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+          Frete grátis incluído · Sem custos adicionais
+        </div>
+
+        <!-- Campos -->
+        <input type="text" id="name" class="form-input" placeholder="Primeiro nome" autocomplete="given-name">
+        <input type="tel" id="phone" class="form-input" placeholder="Ligue com o código de área (para confirmar a entrega)" autocomplete="tel">
+
+        <!-- Erro inline -->
+        <div class="form-error-msg" id="form-error"></div>
+
+        <!-- Botão -->
+        <button class="btn-confirmar" id="btn-submit" onclick="submitOrder()">
+          <span class="lock-icon">🔒</span> Konfirmasi pesanan Anda tanpa membayar sekarang.
+        </button>
+
+        <!-- Nota segurança -->
+        <div class="form-secure-note">
+          <span>🔒</span> Dados Anda dilindungi. Kami mengonfirmasi melalui telepon sebelum pengiriman.
+        </div>
+
+        <!-- 4 ícones trust -->
+        <div class="form-trust-row">
+          <div class="trust-icon-item">
+            <div class="ti-icon">🚚</div>
+            <span>Frete grátis</span>
+          </div>
+          <div class="trust-icon-item">
+            <div class="ti-icon">⚡</div>
+            <span>Entrega rápida</span>
+          </div>
+          <div class="trust-icon-item">
+            <div class="ti-icon">💳</div>
+            <span>Pagamento na hora</span>
+          </div>
+          <div class="trust-icon-item">
+            <div class="ti-icon">🛡️</div>
+            <span>Sem risco</span>
+          </div>
+        </div>
+      </div><!-- /form-right-col -->
+
+    </div><!-- /form-card -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════ MODAL CONFIRMAÇÃO ═══════════════════════════ -->
+<div class="confirm-overlay" id="confirm-overlay">
+  <div class="confirm-modal">
+    <button class="confirm-close" onclick="closeConfirm()" aria-label="Fechar">×</button>
+    <div class="confirm-check-wrap">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="18" fill="#27ae60" fill-opacity=".15"/>
+        <path d="M10 18.5l5.5 5.5 10-11" stroke="#27ae60" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h3>🎉 Parabéns pela sua compra!</h3>
+    <p>Seu pedido foi recebido com sucesso. Nossa equipe entrará em contato em breve para confirmar os detalhes da entrega.</p>
+    <div class="confirm-box">
+      <div class="confirm-box-icon">👤</div>
+      <div class="confirm-box-text">
+        <strong>Aguarde nosso contato.</strong> Você receberá uma ligação ou mensagem de texto para confirmar seu endereço de entrega.
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ═══════════════════════════ FAQ ═══════════════════════════ -->
 <section class="faq">
@@ -784,24 +1052,26 @@ const sub5 = getParam('sub5') || getParam('utm_term')     || '';
 async function submitOrder() {
   const name  = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
-  const status = document.getElementById('order-status');
+  const errEl = document.getElementById('form-error');
   const btn   = document.getElementById('btn-submit');
 
+  errEl.classList.remove('show');
+
   if (!name || name.length < 2) {
-    alert('Silakan masukkan nama lengkap Anda.');
+    errEl.textContent = 'Silakan masukkan nama Anda.';
+    errEl.classList.add('show');
     document.getElementById('name').focus();
     return;
   }
-  if (!phone || phone.length < 8) {
-    alert('Silakan masukkan nomor WhatsApp/HP yang valid.');
+  if (!phone || phone.replace(/\D/g,'').length < 8) {
+    errEl.textContent = 'Silakan masukkan nomor HP/WhatsApp yang valid (min. 8 digit).';
+    errEl.classList.add('show');
     document.getElementById('phone').focus();
     return;
   }
 
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner"></span> Memproses pesanan...';
-  status.className = '';
-  status.style.display = 'none';
 
   const payload = {
     stream_code: STREAM_CODE,
@@ -822,30 +1092,32 @@ async function submitOrder() {
     const data = await res.json();
 
     if (res.ok && (data.success || data.status === 'ok' || data.order_id || res.status === 200 || res.status === 201)) {
-      status.className = 'success';
-      status.innerHTML = `
-        <div class="status-icon">🎉</div>
-        <h4>Pesanan Berhasil Dikirim!</h4>
-        <p>Terima kasih, <strong>${name}</strong>! Tim kami akan segera menghubungi nomor <strong>${phone}</strong> melalui WhatsApp untuk konfirmasi pengiriman Hemocool Anda.<br><br>
-        <strong>Ingat:</strong> Bayar hanya saat paket tiba di rumah Anda. 🏡</p>
-      `;
       document.getElementById('name').value  = '';
       document.getElementById('phone').value = '';
       btn.innerHTML = '✅ Pesanan Terkirim!';
+      // Exibir modal de confirmação
+      document.getElementById('confirm-overlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
     } else {
       throw new Error(data.message || data.error || 'Gagal memproses pesanan');
     }
   } catch (err) {
-    status.className = 'error';
-    status.innerHTML = `
-      <div class="status-icon">⚠️</div>
-      <h4>Terjadi Kendala</h4>
-      <p>Maaf, saat ini sistem sedang sibuk. Silakan coba lagi dalam beberapa menit, atau hubungi kami langsung via WhatsApp.<br><small style="opacity:.7">${err.message}</small></p>
-    `;
+    errEl.innerHTML = `⚠️ Maaf, sistem sedang sibuk. Coba lagi dalam beberapa menit.<br><small style="opacity:.7">${err.message}</small>`;
+    errEl.classList.add('show');
     btn.disabled = false;
-    btn.innerHTML = '🛒 PESAN SEKARANG — BAYAR DI TEMPAT';
+    btn.innerHTML = '<span class="lock-icon">🔒</span> Konfirmasi pesanan Anda tanpa membayar sekarang.';
   }
 }
+
+// ── MODAL CONFIRMAÇÃO ────────────────────────────────────
+function closeConfirm() {
+  document.getElementById('confirm-overlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+// Fechar clicando fora do modal
+document.getElementById('confirm-overlay').addEventListener('click', function(e){
+  if (e.target === this) closeConfirm();
+});
 
 // Enter key submit
 document.addEventListener('keydown', function(e) {
@@ -854,6 +1126,39 @@ document.addEventListener('keydown', function(e) {
     if (t.id === 'name' || t.id === 'phone') submitOrder();
   }
 });
+
+// ── TIMER DO FORMULÁRIO (02:23 regressivo, reinicia) ─────
+(function() {
+  const keyF = 'hemocool_form_timer';
+  let endF = localStorage.getItem(keyF);
+  if (!endF || Date.now() > parseInt(endF)) {
+    endF = Date.now() + (2 * 60 + 23) * 1000;
+    localStorage.setItem(keyF, endF);
+  }
+  function updateF() {
+    const diff = Math.max(0, parseInt(endF) - Date.now());
+    if (diff === 0) {
+      endF = Date.now() + (2 * 60 + 23) * 1000;
+      localStorage.setItem(keyF, endF);
+    }
+    const m = String(Math.floor(diff / 60000)).padStart(2,'0');
+    const s = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+    const el = document.getElementById('form-timer');
+    if (el) el.textContent = `${m}:${s}`;
+    setTimeout(updateF, 1000);
+  }
+  updateF();
+})();
+
+// ── SINCRONIZAR IMAGEM DO PRODUTO NO FORMULÁRIO ──────────
+(function() {
+  const heroImg = document.querySelector('.hero-img-wrap img');
+  const formImg = document.getElementById('form-product-img');
+  if (heroImg && formImg) {
+    formImg.src = heroImg.src;
+    formImg.alt = heroImg.alt;
+  }
+})();
 
 // ── COUNTDOWN TIMER ──────────────────────────────────────
 (function() {
